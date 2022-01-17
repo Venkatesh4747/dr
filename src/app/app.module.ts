@@ -21,7 +21,8 @@ import { LandingModule } from './landing/landing.module';
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
-    NgbModule
+    NgbModule,
+    LandingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
