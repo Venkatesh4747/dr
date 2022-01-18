@@ -22,7 +22,7 @@ import { LandingModule } from './landing/landing.module';
     NbLayoutModule,
     NbEvaIconsModule,
     NgbModule,
-    LandingModule
+    LandingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
