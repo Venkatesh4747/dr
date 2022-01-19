@@ -6,14 +6,17 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component'
-import { NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule, NbLayoutModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbCheckboxModule, NbFormFieldModule, NbIconModule, NbInputModule, NbLayoutModule } from '@nebular/theme';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ForgotComponent,
     IndexComponent,
     LoginComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,10 @@ import { NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputM
     NbButtonModule,
     NbInputModule,
     NbFormFieldModule,
-    NbIconModule
+    NbIconModule,
+    NbCheckboxModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AuthModule { }
