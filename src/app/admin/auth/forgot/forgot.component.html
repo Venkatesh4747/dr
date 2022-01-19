@@ -1,1 +1,32 @@
-<p>forgot works!</p>
+<nb-card class="h-100 w-100">
+    <nb-card-body>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="auth-wrapper">
+                <h2 class="text-start fw-bolder mb-3 fs-3">Reset password</h2>
+                <p class="text-start fs-5 auth-signup-text text-muted">Let Us Help You
+                </p>
+                <p class="text-center fw-bolder mb-3">Enter your registered email address.</p>
+                <form>
+                    <div class="form-group mb-3">
+                        <label for="input-email" class="mb-1">Email address</label>
+                        <input id="input-email" type="email" class="form-control" fieldSize="medium" nbInput fullWidth placeholder="Email*">
+                        <!-- <small class="form-text text-muted" 
+                            *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+                            Please enter email address.!
+                        </small>
+                    
+                        <small class="form-text text-muted"
+                        *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">
+                            Email address not well formed.!
+                        </small> -->
+                    </div>
+                    <button type="submit" class="btn btn-primary text-capitalize mt-2" nbButton fullWidth status="success">Rest My Password</button>
+                    <!-- [disabled]="!loginForm.valid" -->
+                </form>
+                <div class="form-group mt-3 d-flex justify-content-center">
+                    <a routerLink="../login" class="text-decoration-none">Login?</a>
+                </div>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>
