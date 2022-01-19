@@ -1,1 +1,50 @@
-<p>signup works!</p>
+<nb-card class="h-100 w-100">
+    <nb-card-body>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="auth-wrapper">
+                <h2 class="text-start fw-bolder mb-3 fs-3">Sign Up</h2>
+                <p class="text-start fw-lighter fs-6 auth-signup-text text-muted">Enter details to create your account</p>
+                <form>
+                    <div class="form-group mb-3">
+                        <label for="input-user" class="mb-1">Username</label>
+                        <input id="input-user" type="text" class="form-control" fieldSize="medium" nbInput fullWidth placeholder="Enter user name">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="input-email" class="mb-1">Email address</label>
+                        <input id="input-email" type="email" class="form-control" fieldSize="medium" nbInput fullWidth placeholder="Enter email address">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="input-password" class="mb-1">Password</label>
+                        <div class="input-group mb-3">
+                            <input id="input-password" [type]="getInputType()" fieldSize="medium" class="form-control" nbInput fullWidth  placeholder="Password">
+                            <button nbButton size="medium" (click)="toggleShowPassword()">
+                                <nb-icon status="primary" [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+                                         pack="eva"
+                                         [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
+                                </nb-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="input-password" class="mb-1">Confirm Password</label>
+                        <div class="input-group mb-3">
+                            <input id="input-password" [type]="getInput()" fieldSize="medium" class="form-control" nbInput fullWidth  placeholder="Confirm Password">
+                            <button nbButton size="medium" (click)="toggleconfirmPassword()">
+                                <nb-icon status="primary" [icon]="confirmPassword ? 'eye-outline' : 'eye-off-2-outline'"
+                                         pack="eva"
+                                         [attr.aria-label]="confirmPassword ? 'hide password' : 'show password'">
+                                </nb-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group mb-1 d-flex justify-content-start">
+                        <p class="fw-lighter fs-6 text-muted">Already Registered?
+                            <a routerLink="../login" class="text-decoration-none">Login</a>
+                        </p>
+                    </div>
+                    <button type="submit" class="btn btn-primary text-capitalize" nbButton fullWidth status="success">Register</button>
+              </form>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>

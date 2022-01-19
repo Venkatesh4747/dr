@@ -1,0 +1,34 @@
+<nb-layout>
+    <nb-layout-header subheader>
+        <div class="d-flex w-100">
+            <div class="d-flex align-items-center">
+                <!-- <div class="d-flex align-items-center" [ngClass]="flag ? 'width' : 'wth'">
+                    <img class="me-3" src="assets/images/logo.png" alt="logo">
+                    <p *ngIf="flag" class="m-0 fw-bold fs-5">Doctor App</p>
+                </div> -->
+                <nb-icon class="fs-4" icon="menu-outline" (click)="toggle()"></nb-icon>
+            </div>
+            <div class="ms-auto">
+                2
+            </div>
+        </div>
+    </nb-layout-header>
+    <nb-sidebar>
+        <!-- <div *ngIf="!flag">
+            <img class="me-3" src="assets/images/logo.png" alt="logo">
+        </div> -->
+        <div class="d-flex align-items-center justify-content-center">
+            <img class="me-3" src="assets/images/logo.png" alt="logo">
+            <p class="m-0 fw-bold fs-5">Doctor App</p>
+        </div>
+        <div class="d-flex flex-column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </nb-sidebar>
+    <nb-layout-column>content</nb-layout-column>
+    <!-- <nb-layout-footer>footer</nb-layout-footer> -->
+</nb-layout>

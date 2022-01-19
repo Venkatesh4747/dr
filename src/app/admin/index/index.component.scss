@@ -1,0 +1,27 @@
+.width{
+    width: 15.625rem !important;
+    max-width: 100%;
+}
+.wth{
+    width: 4rem !important;
+    max-width: 100%;
+}
+// nb-sidebar.expanded {
+//     width: var(--sidebar-width);
+// }
+// nb-sidebar.compacted {
+//     width: var(--sidebar-width-compact);
+// }
+nb-sidebar.compacted:hover {
+    width: var(--sidebar-width);
+}
+
+:host ::ng-deep {
+    nb-layout .layout .layout-container nb-sidebar .main-container-fixed {
+        top: unset !important;
+    }
+    nb-sidebar .scrollable {
+        padding: var(--sidebar-padding);
+        position: relative;
+    }
+}

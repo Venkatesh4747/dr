@@ -1,9 +1,9 @@
-<nb-card class="height">
+<nb-card class="h-100 w-100">
     <nb-card-body>
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="auth-wrapper">
                 <h2 class="text-start fw-bolder mb-3 fs-3">Welcome to Doctor App</h2>
-                <p class="text-start fw-lighter fs-5 auth-signup-text text-muted">Need an account?
+                <p class="text-start fs-5 auth-signup-text text-muted">Need an account?
                     <a class="sign-up-link" routerLink="../signup">Sign Up</a>
                 </p>
                 <h2 class="text-start fw-bolder mb-3 fs-3">Sign in</h2>
@@ -25,8 +25,8 @@
                         <label for="input-password" class="mb-1">Password</label>
                         <div class="input-group mb-3">
                             <input id="input-password" [type]="getInputType()" fieldSize="medium" class="form-control" nbInput fullWidth formControlName="password" placeholder="Password">
-                            <button nbButton status="primary" size="medium" ghost (click)="toggleShowPassword()">
-                                <nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+                            <button  nbButton size="medium"  (click)="toggleShowPassword()">
+                                <nb-icon status="primary" [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
                                          pack="eva"
                                          [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
                                 </nb-icon>
@@ -37,7 +37,7 @@
                         <nb-checkbox status="basic">Remember me</nb-checkbox>
                         <a routerLink="../forgot-password" class="text-decoration-none">Forgot Password?</a>
                     </div>
-                    <button type="submit" class="btn btn-primary text-capitalize fs-5" nbButton fullWidth status="success">Login</button>
+                    <button type="submit" class="btn btn-primary text-capitalize" nbButton fullWidth status="success">Login</button>
                     <!-- [disabled]="!loginForm.valid" -->
               </form>
             </div>
