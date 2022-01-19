@@ -9,7 +9,7 @@
           <form [formGroup]="forgotForm" class="my-3">
             <div class="form-group mt-2 mb-5">
               <label for="input-email" class="mb-2">Mobile Number</label>
-              <input type="text" nbInput class="w-100" formControlName="mobileNumber" fullWidth  status="danger" placeholder="Email">
+              <input type="text" nbInput class="w-100" formControlName="mobileNumber" fullWidth  status="basic" placeholder="Email">
               <div *ngIf="submitted && f['email'].errors && f['email'].errors['required']"
                 class="error-form text-danger fs-15">Email is required
                 Email is required

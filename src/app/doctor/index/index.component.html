@@ -1,0 +1,19 @@
+<nb-layout>
+  <nb-layout-header subheader>
+    <a href="#"><i class="nb-menu"></i></a>
+   <div>
+    <nb-icon class="fs-4 cursor-pointer" icon="menu-outline" (click)="toggle($event)"></nb-icon>
+   </div>
+  </nb-layout-header>
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+  <nb-sidebar>
+    <div class="d-flex w-100">
+      <span class="d-flex">
+        <img *ngIf="!flag" src="assets/images/logo.png"  alt="logo" class="mt-2" height="44">
+        <h4 class="ms-2 mt-3">Doctor App</h4>
+      </span>
+    </div>
+  </nb-sidebar>
+</nb-layout>

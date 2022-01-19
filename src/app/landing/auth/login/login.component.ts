@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ export class LoginComponent implements OnInit {
   submitted = false
   backgroundImage : string = 'assets/images/drApp.png';
   showPassword : boolean = false;
-  constructor() { }
+
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,5 +36,11 @@ export class LoginComponent implements OnInit {
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
   }
+
+  signIn() {
+    this.submitted = true;
+    this.router.navigate(['/doctor/dashboard']);
+  }
+
 
 }

@@ -1,0 +1,61 @@
+
+<nb-card class="height">
+    <nb-card-body class="d-flex justify-content-center align-items-center w-100">
+        <div class="col-xxl-6">
+          <h2>Sign Up</h2>
+          <h6 class="mt-3 text-muted">Enter details to create your account </h6>
+          <form [formGroup]="patientSignupForm" class="my-3">
+            <div class="form-group mt-2">
+              <label for="firstName" class="mb-2">First Name</label>
+              <input type="text" nbInput class="w-100" fullWidth formControlName="firstName" status="basic" placeholder="First Name">
+              <div *ngIf="submitted && f['firstName'].errors && f['firstName'].errors['required']"
+                class="error-form text-danger fs-15">firstName is required
+              </div>
+            </div>
+            <div class="form-group mt-2">
+                <label for="lastName" class="mb-2">Last Name</label>
+                <input type="text" nbInput class="w-100" fullWidth formControlName="lastName" status="basic" placeholder="Last Name">
+                <div *ngIf="submitted && f['lastName'].errors && f['lastName'].errors['required']"
+                  class="error-form text-danger fs-15">Last Name is required
+                </div>
+              </div>
+              <div class="form-group mt-2">
+                <label for="mobileNumber" class="mb-2">Mobile Number</label>
+                <input type="text" nbInput class="w-100" fullWidth formControlName="mobileNumber" status="basic" placeholder="Mobile Number">
+                <div *ngIf="submitted && f['mobileNumber'].errors && f['mobileNumber'].errors['required']"
+                  class="error-form text-danger fs-15">Mobile Number is required
+                </div>
+              </div>
+            <div class="form-group mt-2">
+              <label for="input-password" class="mb-2">Password</label>
+              <div class="input-group mb-3">
+                  <input id="input-password" [type]="getInputType()" fieldSize="medium" class="form-control" nbInput fullWidth formControlName="password" placeholder="Password">
+                  <button nbButton class="iconBack"  size="medium" (click)="toggleShowPassword()">
+                      <nb-icon status="primary" [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'" pack="eva"
+                               [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
+                      </nb-icon>
+                  </button>
+              </div>
+          </div>
+          <div class="form-group mt-2">
+            <label for="input-password" class="mb-2">Confirm Password</label>
+            <div class="input-group mb-3">
+                <input id="input-password" [type]="getInputTypeConfirmPassword()" fieldSize="medium" class="form-control" nbInput fullWidth formControlName="confirmPassword" placeholder="Confirm Password">
+                <button class="iconBack" nbButton size="medium" (click)="toggleShowconfirmPassword()">
+                    <nb-icon status="primary" [icon]="showConfirmPassword ? 'eye-outline' : 'eye-off-2-outline'"
+                             pack="eva"
+                             [attr.aria-label]="showConfirmPassword ? 'hide password' : 'show password'">
+                    </nb-icon>
+                </button>
+            </div>
+        </div>
+          <div class="mt-2">
+            <h6 class="text-muted">Already Register? <a routerLink="../patient-login">Login</a></h6>
+          </div>
+            <div class="text-center mt-3">
+              <button nbButton class="w-100" status="success">Register</button>
+            </div>
+          </form>
+        </div>
+    </nb-card-body>
+  </nb-card>
