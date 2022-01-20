@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { IndexComponent } from './index/index.component';
-import { NbIconModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import { NbCardModule, NbContextMenuModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbUserModule } from '@nebular/theme';
 
 
 @NgModule({
@@ -15,7 +15,11 @@ import { NbIconModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
     AdminRoutingModule,
     NbLayoutModule,
     NbSidebarModule,
-    NbIconModule
+    NbIconModule,
+    NbMenuModule,
+    NbCardModule,
+    NbUserModule,
+    NbContextMenuModule
   ]
 })
 export class AdminModule { }

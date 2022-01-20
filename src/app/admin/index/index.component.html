@@ -1,34 +1,44 @@
 <nb-layout>
-    <nb-layout-header subheader>
-        <div class="d-flex w-100">
-            <div class="d-flex align-items-center">
-                <!-- <div class="d-flex align-items-center" [ngClass]="flag ? 'width' : 'wth'">
-                    <img class="me-3" src="assets/images/logo.png" alt="logo">
-                    <p *ngIf="flag" class="m-0 fw-bold fs-5">Doctor App</p>
-                </div> -->
-                <nb-icon class="fs-4" icon="menu-outline" (click)="toggle()"></nb-icon>
+    <nb-layout-header>
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <nb-icon class="fs-4" icon="menu-outline" (click)="toggle()"></nb-icon>
+            <div class="d-flex ml align-items-center">
+                <img class="me-2" [src]="logo" alt="logo">
+                <p class="m-0 fw-bold fs-5">Doctor App</p>
             </div>
-            <div class="ms-auto">
-                2
+            <div class="d-flex align-items-center flex-row" [nbContextMenu]="itemsMenu" nbContextMenuTrigger="focus">
+                <div class="fs-6 fw-bold text-center none">Welcome <span class="fw-light">{{ AdminName }}</span></div>
+                <div class="ms-1">
+                    <nb-user size="large"
+                    [name]="AdminName"
+                    [title]="AdminRole"
+                    [picture]="image"
+                    onlyPicture="true">
+                    </nb-user>
+                    <!-- <img [src]="image" class="toggleImage" alt="image"> -->
+                </div>
             </div>
         </div>
     </nb-layout-header>
-    <nb-sidebar>
-        <!-- <div *ngIf="!flag">
-            <img class="me-3" src="assets/images/logo.png" alt="logo">
-        </div> -->
-        <div class="d-flex align-items-center justify-content-center">
-            <img class="me-3" src="assets/images/logo.png" alt="logo">
-            <p class="m-0 fw-bold fs-5">Doctor App</p>
-        </div>
-        <div class="d-flex flex-column">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
+    <nb-sidebar [collapsedBreakpoints]="['xs', 'is']" (responsiveStateChange)="onResponsive($event)" (stateChange)="onStateChange($event)">
+        <nb-card *ngIf="showImage">
+            <nb-card-body>
+                <div class="mb-3">
+                    <nb-user 
+                    *ngIf="showImg"
+                    size="large"
+                    [name]="AdminName"
+                    [title]="AdminRole"
+                    [picture]="image"
+                    onlyPicture>
+                    </nb-user>
+                    <!-- <img [src]="image" class="sideBarImage" alt="image"> -->
+                </div>
+                <div class="fs-5 fw-bold text-center mb-2">{{ AdminName }}</div>
+                <div class="fs-6 fw-bolder fc text-center">{{ AdminRole }}</div>
+            </nb-card-body>
+        </nb-card>
+        <nb-menu *ngIf="showMenu" [items]="items"></nb-menu>
     </nb-sidebar>
     <nb-layout-column>content</nb-layout-column>
-    <!-- <nb-layout-footer>footer</nb-layout-footer> -->
 </nb-layout>
