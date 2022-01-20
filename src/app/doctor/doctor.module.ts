@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { IndexComponent } from './index/index.component';
-import { NbIconModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbLayoutModule, NbListModule, NbMenuModule, NbSidebarModule, NbUserModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons/eva-icons.module';
 
 
 @NgModule({
@@ -15,6 +16,11 @@ import { NbIconModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
     DoctorRoutingModule,
     NbLayoutModule,
     NbSidebarModule,
+    NbIconModule,
+    NbUserModule,
+    NbListModule,
+    NbMenuModule,
+    NbCardModule,
     NbIconModule
   ]
 })

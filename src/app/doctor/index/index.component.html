@@ -1,19 +1,43 @@
 <nb-layout>
   <nb-layout-header subheader>
     <a href="#"><i class="nb-menu"></i></a>
-   <div>
-    <nb-icon class="fs-4 cursor-pointer" icon="menu-outline" (click)="toggle($event)"></nb-icon>
-   </div>
+    <div>
+      <nb-icon class="fs-4" icon="menu-outline" (click)="toggle()"></nb-icon>
+    </div>
+    <div class="mx-auto d-flex justify-content-center">
+      <img src="assets/images/logo.png" alt="logo" height="30">
+      <h4 class="ms-2">Doctor App</h4>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="fs-5 me-2">{{ doctorName }}</div>
+      <nb-user size="large" name="{{doctorName}}" title="Engineer" onlyPicture [picture]="profileImage">
+      </nb-user>
+    </div>
   </nb-layout-header>
   <nb-layout-column>
     <router-outlet></router-outlet>
   </nb-layout-column>
-  <nb-sidebar>
-    <div class="d-flex w-100">
-      <span class="d-flex">
-        <img *ngIf="!flag" src="assets/images/logo.png"  alt="logo" class="mt-2" height="44">
-        <h4 class="ms-2 mt-3">Doctor App</h4>
-      </span>
+  <nb-sidebar tag="left">
+    <!-- <div *ngIf="!flag" class="mx-auto d-flex justify-content-center sidenav">
+      <img src="assets/images/logo.png" alt="logo" height="30">
+    </div> -->
+    <!-- <div *ngIf="flag" class="mx-auto d-flex justify-content-center sidenav">
+      <img src="assets/images/logo.png" alt="logo" height="30">
+      <h4 class="ms-2">Doctor App</h4>
+    </div> -->
+    <div class="row mx-0 mt-4">
+      <div class="col-md-12" *ngIf="flag">
+        <nb-user size="giant" shape="rectangle" name="John Doe" title="Engineer" onlyPicture
+          class="d-flex justify-content-center" [picture]="profileImage"></nb-user>
+      </div>
+      <div class="col-md-12 mt-3" *ngIf="flag">
+        <div class="fs-5 fw-bold text-center mb-2">{{ doctorName }}</div>
+        <div class="fs-6 fw-bolder fc text-center">{{ doctorRole }}</div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <nb-menu [items]="items">
+      </nb-menu>
     </div>
   </nb-sidebar>
 </nb-layout>

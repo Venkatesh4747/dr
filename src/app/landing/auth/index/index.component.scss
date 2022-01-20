@@ -11,3 +11,9 @@
     position: relative;
     z-index: 1;
 }
+
+@media (max-width: 576px) {
+    .view{
+        display: none !important;
+    }
+}

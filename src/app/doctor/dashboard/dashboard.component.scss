@@ -1,0 +1,36 @@
+.width {
+    height: 75px;
+    width: 75px;
+    color: white;
+}
+:host ::ng-deep {
+    nb-card {
+        background: linear-gradient(to left, #3a7bd5, #3a6073) !important;
+        border-radius: 10px !important;
+        height: 200px;
+        width: 100%;
+    }
+    .notfy-design{
+        background: linear-gradient(to right, #c33764, #1d2671) !important;
+    }
+    .inbox-design {
+        background: linear-gradient(to left, #134e5e, #71b280) !important;
+    }
+    .card-design {
+        background: linear-gradient(to left, #3a7bd5, #3a6073) !important;
+        border-radius: 10px !important;
+        // height: 800px;
+        // width: 100%;
+    }
+            
+}
+
+
+
+.font-color {
+    color: white;
+}
+
+.mb{
+    margin-bottom: 0.5rem !important;
+}

@@ -1,1 +1,102 @@
-<p>dashboard works!</p>
+<div>
+    <h4 class="page-title">Doctor Dashboard <nb-icon icon="arrow-ios-forward-outline"></nb-icon>
+        <nb-icon icon="home-outline"></nb-icon>
+    </h4>
+    <div class="row mt-4 mb-0">
+        <div class="col-md-3">
+            <nb-card>
+                <nb-card-body>
+                    <div class="row mb">
+                        <div class="col-xl-10">
+                            <h5 class="m-0 font-color">Video Consultations</h5>
+                        </div>
+                        <div class="col-xl-2 icon_right">
+                            <nb-icon class="text-white icon-size h-100 w-100" icon="calendar-outline"></nb-icon>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <nb-icon class="width" icon="video-outline"></nb-icon>
+                        </div>
+                        <div class="col-md-3">
+                          <h1 class="float-end text-white my-3">{{ consultationCount }}</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <p class="m-0 p-2 fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Today</p>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Week</p>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Month</p>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Year</p>
+                        </div>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="col-md-3">
+            <nb-card class="notfy-design">
+                <nb-card-body class="pb-0">
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <h5 class="text-white">Notifications</h5>
+                        </div>
+                        <div class="col-xl-2 icon_right">
+                            <nb-icon class="text-white icon-size h-100 w-100" icon="twitter-outline"></nb-icon>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-white">{{ message }}</p>
+                            <p class="text-white">{{ date }}</p>
+                        </div>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="col-md-3">
+            <nb-card class="inbox-design">
+                <nb-card-body>
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <h5 class="text-white">Inbox</h5>
+                        </div>
+                        <div class="col-xl-2 icon_right">
+                            <nb-icon class="text-white icon-size h-100 w-100" icon="paper-plane-outline"></nb-icon>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <p class="text-white">Abdul Rashid</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p class="text-white float-end">30 min ago</p>
+                        </div>
+                        <p class="text-white">Sever pain</p>
+                        <p class="text-white">Patient</p>
+                      </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div class="col-md-3">
+            <nb-card class="card-design">
+                <nb-card-body class="pb-0">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <h5 class="text-white">My Availability</h5>
+                        </div>
+                         <div class="col-xl-4">
+                            <button nbButton hero status="primary" shape="semi-round">Edit</button>
+                        </div>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </div>
+
+    </div>
+</div>
