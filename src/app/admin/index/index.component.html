@@ -1,44 +1,38 @@
 <nb-layout>
-    <nb-layout-header>
+    <nb-layout-header subheader="true">
         <div class="d-flex justify-content-between align-items-center w-100">
             <nb-icon class="fs-4" icon="menu-outline" (click)="toggle()"></nb-icon>
-            <div class="d-flex ml align-items-center">
+            <div class="d-flex align-items-center">
                 <img class="me-2" [src]="logo" alt="logo">
                 <p class="m-0 fw-bold fs-5">Doctor App</p>
             </div>
             <div class="d-flex align-items-center flex-row" [nbContextMenu]="itemsMenu" nbContextMenuTrigger="focus">
                 <div class="fs-6 fw-bold text-center none">Welcome <span class="fw-light">{{ AdminName }}</span></div>
                 <div class="ms-1">
-                    <nb-user size="large"
-                    [name]="AdminName"
-                    [title]="AdminRole"
-                    [picture]="image"
-                    onlyPicture="true">
+                    <nb-user size="large" [name]="AdminName" [title]="AdminRole" [picture]="image" onlyPicture="true">
                     </nb-user>
-                    <!-- <img [src]="image" class="toggleImage" alt="image"> -->
                 </div>
             </div>
         </div>
     </nb-layout-header>
-    <nb-sidebar [collapsedBreakpoints]="['xs', 'is']" (responsiveStateChange)="onResponsive($event)" (stateChange)="onStateChange($event)">
-        <nb-card *ngIf="showImage">
-            <nb-card-body>
-                <div class="mb-3">
-                    <nb-user 
-                    *ngIf="showImg"
-                    size="large"
-                    [name]="AdminName"
-                    [title]="AdminRole"
-                    [picture]="image"
-                    onlyPicture>
-                    </nb-user>
-                    <!-- <img [src]="image" class="sideBarImage" alt="image"> -->
-                </div>
-                <div class="fs-5 fw-bold text-center mb-2">{{ AdminName }}</div>
-                <div class="fs-6 fw-bolder fc text-center">{{ AdminRole }}</div>
-            </nb-card-body>
-        </nb-card>
+    <nb-sidebar [collapsedBreakpoints]="['xs', 'is','sm', 'md', 'lg']" (responsiveStateChange)="onResponsive($event)"
+    (stateChange)="onStateChange($event)">
+    <!-- <nb-card *ngIf="showImage"> -->
+        <!-- <nb-card-body> -->
+            <div class="mb-3" *ngIf="showImage">
+                <nb-user *ngIf="showImg" size="large" [name]="AdminName" [title]="AdminRole" [picture]="image" onlyPicture
+                class="mb-3">
+            </nb-user>
+            <!-- <img [src]="image" class="sideBarImage" alt="image"> -->
+            <div class="fs-5 fw-bold text-center mb-2">{{ AdminName }}</div>
+            <div class="fs-6 fw-bolder fc text-center">{{ AdminRole }}</div>
+        </div>
+        <!-- </nb-card-body> -->
+        <!-- </nb-card> -->
         <nb-menu *ngIf="showMenu" [items]="items"></nb-menu>
     </nb-sidebar>
-    <nb-layout-column>content</nb-layout-column>
+    <nb-layout-column>
+        <router-outlet></router-outlet>
+    </nb-layout-column>
 </nb-layout>
+<!-- <img [src]="image" class="toggleImage" alt="image"> -->

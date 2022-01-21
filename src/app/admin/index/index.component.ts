@@ -7,8 +7,7 @@ import { NbMenuItem, NbMenuService, NbSidebarComponent, NbSidebarService, NB_WIN
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  @ViewChild(NbSidebarComponent, {static: true}) nbSideBar!: NbSidebarComponent;
-  state!: string;
+  @ViewChild(NbSidebarComponent, { static: true }) nbSideBar!: NbSidebarComponent;
   showMenu: boolean = true;
   showImage: boolean = true;
   AdminName: string = 'Sarah Smith';
@@ -16,12 +15,13 @@ export class IndexComponent implements OnInit {
   logo: string = 'assets/images/logo.png';
   image: string = 'assets/images/admin.jpg';
   showImg: boolean = true;
+  flag: boolean = true;
 
 
   constructor(private sidebarService: NbSidebarService) {
     this.sidebarService.getSidebarResponsiveState()
     this.sidebarService.getSidebarState();
-   }
+  }
 
   ngOnInit(): void {
     // this.nbSideBar.collapsedBreakpoints = ['xs', 'is'];
@@ -31,24 +31,25 @@ export class IndexComponent implements OnInit {
   }
 
   toggle() {
+    this.flag = !this.flag;
     this.sidebarService.toggle(true);
   }
-  onStateChange(e : any) {
-    if (e == 'compacted' || e == 'collapsed'){
+  onStateChange(e: any) {
+    if (e == 'compacted' || e == 'collapsed') {
       this.showImage = false;
     } else {
       this.showImage = true;
     }
     if (e == 'collapsed') {
       this.showMenu = false;
-    } else{
+    } else {
       this.showMenu = true;
     }
   }
 
-  onResponsive(e : any) {
+  onResponsive(e: any) {
     console.log('this ', e);
-    if ( e == 'mobile'){
+    if (e == 'mobile') {
       this.showImg = false;
     } else {
       this.showImg = true;
@@ -58,6 +59,7 @@ export class IndexComponent implements OnInit {
     {
       title: 'User Management',
       icon: 'home-outline',
+      link: '/admin/user'
     },
     {
       title: 'Patients',
@@ -92,8 +94,10 @@ export class IndexComponent implements OnInit {
       icon: 'log-out-outline',
     },
   ];
-  itemsMenu : any = [
-    { title: 'Logout',
-      icon: 'log-out-outline'},
+  itemsMenu: any = [
+    {
+      title: 'Logout',
+      icon: 'log-out-outline'
+    },
   ];
 }

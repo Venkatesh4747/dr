@@ -1,46 +1,64 @@
-.width{
+.width {
     width: 15.625rem !important;
     max-width: 100%;
 }
-.wth{
+.wth {
     width: 4rem !important;
     max-width: 100%;
 }
 // nb-sidebar.compacted:hover {
 //     width: var(--sidebar-width);
-// }  
+// }
 :host ::ng-deep {
     nb-layout .layout .layout-container nb-sidebar .main-container-fixed {
         top: unset !important;
     }
+    nb-sidebar.expanded {
+        width: 14rem !important;
+    }
+    nb-sidebar.compacted .main-container {
+        width: var(--sidebar-width-compact) !important;
+    }
     nb-sidebar .scrollable {
         padding: var(--sidebar-padding) !important;
         position: relative !important;
-        nb-card{
-            border: none !important;
 
-            .user-picture{
-                width: 10rem !important;
-                height: 10rem !important;
-                border-radius: 1rem !important;
-                border: 5px solid white !important;
-                box-shadow: 0px 0px 15px 5px #dbe2eb !important;
-            }
+        nb-user {
+            justify-content: center !important;
         }
-        nb-menu { 
+        .user-picture {
+            width: 5rem !important;
+            height: 5rem !important;
+            border-radius: 1rem !important;
+            border: 5px solid white !important;
+            box-shadow: 0px 0px 15px 5px #dbe2eb !important;
+        }
+        nb-menu {
+
+            span{
+                font-size: 1rem !important;
+                font-weight: 200 !important;
+            }
+            .menu-item {
+                border-bottom: 0rem !important;
+            }
             nb-icon {
                 color: #3162ee !important;
             }
         }
     }
+    nb-sidebar .main-container {
+        height: var(--sidebar-height);
+        width: 14rem !important;
+    }
     // nb-sidebar {
     //     transition: all 0.5s !important;
     // }
     // nb-sidebar.compacted.left.fixed ~ .content {
-        // margin-left: unset !important;
+    // margin-left: unset !important;
     // }
 }
-.fc{
+.fc {
     color: #b6b6b6 !important;
 }
 
@@ -48,16 +66,18 @@
     width: 3rem !important;
     border-radius: 2rem !important;
 }
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .none {
         display: none;
     }
 }
 .ml {
     margin-left: 7.5rem !important;
- }
-@media (max-width: 768px){
+    display: none !important;
+}
+@media (max-width: 768px) {
     .ml {
-       margin-left: 0 !important;
+        margin-left: 0 !important;
+        display: block !important;
     }
 }
