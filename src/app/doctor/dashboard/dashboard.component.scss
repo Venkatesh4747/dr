@@ -1,8 +1,8 @@
-.width {
-    height: 75px;
-    width: 75px;
-    color: white;
-}
+// .width {
+//     height: 75px;
+//     width: 75px;
+//     color: white;
+// }
 :host ::ng-deep {
     nb-card {
         background: linear-gradient(to left, #3a7bd5, #3a6073) !important;
@@ -21,15 +21,12 @@
         border-radius: 10px !important;
         // height: 800px;
         // width: 100%;
-    }
+    } 
             
 }
-
-
-
-.font-color {
-    color: white;
-}
+:host nb-tab {
+    padding: 1.25rem;
+  }
 
 .mb{
     margin-bottom: 0.5rem !important;

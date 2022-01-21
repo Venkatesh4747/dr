@@ -1,4 +1,4 @@
-<nb-layout>
+<!-- <nb-layout>
   <nb-layout-header subheader>
     <a href="#"><i class="nb-menu"></i></a>
     <div>
@@ -9,25 +9,20 @@
       <h4 class="ms-2">Doctor App</h4>
     </div>
     <div class="d-flex align-items-center">
-      <div class="fs-5 me-2">{{ doctorName }}</div>
-      <nb-user size="large" name="{{doctorName}}" title="Engineer" onlyPicture [picture]="profileImage">
+      <div class="fs-6 fw-bold text-center none">Welcome <span class="fw-light">{{ doctorName }}</span></div> -->
+      <!-- <span class="fs-5 me-2">{{ doctorName }}</span> -->
+      <!-- <nb-user size="large" name="{{doctorName}}" title="Engineer" onlyPicture [picture]="profileImage">
       </nb-user>
     </div>
   </nb-layout-header>
   <nb-layout-column>
     <router-outlet></router-outlet>
   </nb-layout-column>
-  <nb-sidebar tag="left">
-    <!-- <div *ngIf="!flag" class="mx-auto d-flex justify-content-center sidenav">
-      <img src="assets/images/logo.png" alt="logo" height="30">
-    </div> -->
-    <!-- <div *ngIf="flag" class="mx-auto d-flex justify-content-center sidenav">
-      <img src="assets/images/logo.png" alt="logo" height="30">
-      <h4 class="ms-2">Doctor App</h4>
-    </div> -->
-    <div class="row mx-0 mt-4">
+  <nb-sidebar [collapsedBreakpoints]="['xs', 'is']" (responsiveStateChange)="onResponsive($event)"
+    (stateChange)="onStateChange($event)">
+    <div class="row mx-0 mt-4" *ngIf="showImage">
       <div class="col-md-12" *ngIf="flag">
-        <nb-user size="giant" shape="rectangle" name="John Doe" title="Engineer" onlyPicture
+        <nb-user *ngIf="showImg" size="giant" shape="rectangle" name="doctorName" title="doctorRole" onlyPicture
           class="d-flex justify-content-center" [picture]="profileImage"></nb-user>
       </div>
       <div class="col-md-12 mt-3" *ngIf="flag">
@@ -36,8 +31,53 @@
       </div>
     </div>
     <div class="mt-5">
-      <nb-menu [items]="items">
+      <nb-menu *ngIf="showMenu" [items]="items">
       </nb-menu>
     </div>
   </nb-sidebar>
+</nb-layout> -->
+
+<nb-layout>
+  <nb-layout-header>
+      <div class="d-flex justify-content-between align-items-center w-100">
+          <nb-icon class="fs-4" icon="menu-outline" (click)="toggle()"></nb-icon>
+          <div class="d-flex ml align-items-center">
+              <img class="me-2" [src]="logo" alt="logo">
+              <p class="m-0 fw-bold fs-5">Doctor App</p>
+          </div>
+          <div class="d-flex align-items-center flex-row" [nbContextMenu]="itemsMenu" nbContextMenuTrigger="focus">
+              <div class="fs-6 fw-bold text-center">Welcome <span class="fc">{{ doctorName }}</span></div>
+              <div class="ms-1">
+                  <nb-user size="medium"
+                  [name]="doctorName"
+                  [title]="doctorRole"
+                  [picture]="profileImage"
+                  onlyPicture="true">
+                  </nb-user>
+              </div>
+          </div>
+      </div>
+  </nb-layout-header>
+  <nb-sidebar [collapsedBreakpoints]="['xs', 'is']" (responsiveStateChange)="onResponsive($event)" (stateChange)="onStateChange($event)">
+      <nb-card *ngIf="showImage">
+          <nb-card-body>
+              <div class="mb-3">
+                  <nb-user 
+                  *ngIf="showImg"
+                  size="large"
+                  [name]="doctorName"
+                  [title]="doctorRole"
+                  [picture]="profileImage"
+                  onlyPicture>
+                  </nb-user>
+              </div>
+              <div class="fc text-center">{{ doctorName }}</div>
+              <p class="fcs text-center">{{ doctorRole }}</p>
+          </nb-card-body>
+      </nb-card>
+      <nb-menu *ngIf="showMenu" [items]="items"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column> 
+    <router-outlet></router-outlet>
+  </nb-layout-column>
 </nb-layout>

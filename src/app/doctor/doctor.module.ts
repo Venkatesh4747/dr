@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { IndexComponent } from './index/index.component';
-import { NbCardModule, NbIconModule, NbLayoutModule, NbListModule, NbMenuModule, NbSidebarModule, NbUserModule } from '@nebular/theme';
+import { NbCardModule, NbContextMenuModule, NbIconModule, NbLayoutModule, NbListModule, NbMenuModule, NbSidebarModule, NbUserModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons/eva-icons.module';
 
 
@@ -21,7 +21,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons/eva-icons.module';
     NbListModule,
     NbMenuModule,
     NbCardModule,
-    NbIconModule
+    NbIconModule,
+    NbContextMenuModule,
   ]
 })
 export class DoctorModule { }

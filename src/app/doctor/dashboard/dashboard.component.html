@@ -3,54 +3,53 @@
         <nb-icon icon="home-outline"></nb-icon>
     </h4>
     <div class="row mt-4 mb-0">
-        <div class="col-md-3">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
             <nb-card>
                 <nb-card-body>
-                    <div class="row mb">
-                        <div class="col-xl-10">
-                            <h5 class="m-0 font-color">Video Consultations</h5>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5 class="m-0 text-white">Video Consultations</h5>
                         </div>
-                        <div class="col-xl-2 icon_right">
-                            <nb-icon class="text-white icon-size h-100 w-100" icon="calendar-outline"></nb-icon>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <nb-icon class="width" icon="video-outline"></nb-icon>
-                        </div>
-                        <div class="col-md-3">
-                          <h1 class="float-end text-white my-3">{{ consultationCount }}</h1>
+                        <div>
+                            <nb-icon class="text-white" icon="video-outline"></nb-icon>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <p class="m-0 p-2 fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Today</p>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Week</p>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Month</p>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">Year</p>
-                        </div>
+                    <div class="row text-end">
+                        <h1 class="text-white my-3">{{ consultationCount }}</h1>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <!-- <div class="col-xl-3 col-md-6"> -->
+                        <p class="m-0 p-2 fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">
+                            Today</p>
+                        <!-- </div> -->
+                        <!-- <div class="col-xl-3 col-md-6"> -->
+                        <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">
+                            Week</p>
+                        <!-- </div> -->
+                        <!-- <div class="col-xl-3 col-md-6"> -->
+                        <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">
+                            Month</p>
+                        <!-- </div> -->
+                        <!-- <div class="col-xl-3 col-md-6"> -->
+                        <p class="m-0 p-2  fw-lighter cursor-pointer fsize text-white" (click)="getConsultationCount()">
+                            Year</p>
+                        <!-- </div> -->
                     </div>
                 </nb-card-body>
             </nb-card>
         </div>
-        <div class="col-md-3">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
             <nb-card class="notfy-design">
                 <nb-card-body class="pb-0">
-                    <div class="row">
-                        <div class="col-xl-10">
-                            <h5 class="text-white">Notifications</h5>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5 class="m-0 text-white">Notifications</h5>
                         </div>
-                        <div class="col-xl-2 icon_right">
-                            <nb-icon class="text-white icon-size h-100 w-100" icon="twitter-outline"></nb-icon>
+                        <div>
+                            <nb-icon class="text-white" icon="twitter-outline"></nb-icon>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-4">
                         <div class="col-md-12">
                             <p class="text-white">{{ message }}</p>
                             <p class="text-white">{{ date }}</p>
@@ -59,44 +58,73 @@
                 </nb-card-body>
             </nb-card>
         </div>
-        <div class="col-md-3">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
             <nb-card class="inbox-design">
                 <nb-card-body>
-                    <div class="row">
-                        <div class="col-xl-10">
-                            <h5 class="text-white">Inbox</h5>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5 class="m-0 text-white">Inbox</h5>
                         </div>
-                        <div class="col-xl-2 icon_right">
-                            <nb-icon class="text-white icon-size h-100 w-100" icon="paper-plane-outline"></nb-icon>
+                        <div>
+                            <nb-icon class="text-white" icon="paper-plane-outline"></nb-icon>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                          <p class="text-white">Abdul Rashid</p>
+                    <div class="row mt-4">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 text-white">Abdul Rashid</p>
+                            </div>
+                            <div>
+                                <p class="m-0 text-white">30 Min ago</p>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                          <p class="text-white float-end">30 min ago</p>
-                        </div>
-                        <p class="text-white">Sever pain</p>
-                        <p class="text-white">Patient</p>
-                      </div>
-                </nb-card-body>
-            </nb-card>
-        </div>
-        <div class="col-md-3">
-            <nb-card class="card-design">
-                <nb-card-body class="pb-0">
-                    <div class="row">
-                        <div class="col-xl-8">
-                            <h5 class="text-white">My Availability</h5>
-                        </div>
-                         <div class="col-xl-4">
-                            <button nbButton hero status="primary" shape="semi-round">Edit</button>
+                        <div>
+                            <p class="text-white">Sever pain</p>
+                            <p class="text-white">Patient</p>
                         </div>
                     </div>
                 </nb-card-body>
             </nb-card>
         </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-md-8">
+        <nb-tabset>
+            <nb-tab class="tabset">
+                <ng-template nbTabTitle>
+                    <span>Upcoming Appointments</span>
+                </ng-template>
+                <ngx-datatable class="bootstrap cursor-pointer" [rows]="encounterList" [columnMode]="ColumnMode.force"
+                [scrollbarV]="true" [scrollbarH]="true" [headerHeight]="headerHeight" [rowHeight]="rowHeight"
+                [loadingIndicator]="isLoading" (scroll)="onScroll($event.offsetY)" style="height: 570px;">
+                <ngx-datatable-column name="Patient Name" prop="patientName" headerClass="text-center" cellClass="text-center">
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <span>{{value || '-'}}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Location" prop="location" headerClass="text-center" cellClass="text-center">
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <span>{{value || '-'}}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Appointment Date & Time" prop="appointment" headerClass="text-center" cellClass="text-center">
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <span>{{value || '-'}}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Action" prop="action" headerClass="text-center" cellClass="text-center">
+                    <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                        <span>{{value || '-'}}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+            </nb-tab>
+            <nb-tab class="tabset">
+                <span *nbTabTitle>Incomplete Records</span>
+
+            </nb-tab>
+        </nb-tabset>
     </div>
 </div>
